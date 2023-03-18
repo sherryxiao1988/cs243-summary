@@ -1,5 +1,8 @@
 # Register Allocation
 
+## Live Ranges
+![live range example](/images/liveRange.png)
+
 ## Algorithm
 
 ```
