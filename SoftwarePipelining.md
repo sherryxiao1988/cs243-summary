@@ -28,6 +28,7 @@ With "doAccross" loops there's a limit of how much you can parallelise the code.
 #### Precedence constraints on Initiation Interval
 
 > for all cycles c,
+
 > MII = max<sub>c</sub> CycleLength(c) / Iteration difference(c)
 
 #### Scheduling constraint: Resource
