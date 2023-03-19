@@ -17,7 +17,9 @@ The locally compacted code may not be optimal, but we only care that the steady 
 
 With "doAccross" loops there's a limit of how much you can parallelise the code.
 
-#### Resource constraints on Initiation Interval
+**Initiation interval = size of steady state**
+
+### Resource constraints on Initiation Interval
 
 > for all resource i
   number of units require by one iteration: n<sub>i</sub>
@@ -25,29 +27,22 @@ With "doAccross" loops there's a limit of how much you can parallelise the code.
   
 > Minimum initiation interval (MII) = max<sub>i</sub> ceil(n<sub>i</sub>/R<sub>i</sub>)
 
-#### Precedence constraints on Initiation Interval
+### Precedence constraints on Initiation Interval
 
 > for all cycles c,
 
 > MII = max<sub>c</sub> CycleLength(c) / Iteration difference(c)
 
-#### Scheduling constraint: Resource
-
-**Initiation interval = size of steady state**
-
-![resource reservation table](/images/resourceReservationTable.png)
-
-#### Scheduling constraint: Precedence
-
-![precedence](/images/precedence.png)
+This is based on:
 
 Label edges with <𝛿, d>
 * 𝛿 = iteration difference
 * d = delay
 
+Constraint for edge from n<sub>1</sub> to n<sub>2</sub> labeled <𝛿, d>
+> 𝛿 * T + S(n<sub>2</sub>) - S(n<sub>1</sub>)  ≥ d
 
-𝛿 * T + S(n<sub>2</sub>) - S(n<sub>1</sub>)  ≥ d
-
+![precedence](/images/precedence.png)
 
 Cycles in the dependence graph mean that now you're bound on both ends. You can't stretch T arbitrarily 
 
