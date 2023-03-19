@@ -23,12 +23,12 @@ With "doAccross" loops there's a limit of how much you can parallelise the code.
   number of units require by one iteration: n<sub>i</sub>
   number of units in system: R<sub>i</sub>
   
-> Lower bound = max<sub>i</sub> ceil(n<sub>i</sub>/R<sub>i</sub>)
+> Minimum initiation interval (MII) = max<sub>i</sub> ceil(n<sub>i</sub>/R<sub>i</sub>)
 
 #### Precedence constraints on Initiation Interval
 
-for all cycles c,
-  max<sub>c</sub> CycleLength(c) / Iteration difference(c)
+> for all cycles c,
+> MII = max<sub>c</sub> CycleLength(c) / Iteration difference(c)
 
 #### Scheduling constraint: Resource
 
