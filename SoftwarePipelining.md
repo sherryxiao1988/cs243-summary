@@ -24,7 +24,7 @@ for all resource i
   number of units require by one iteration: n<sub>i</sub>
   number of units in system: R<sub>i</sub>
   
-Lower bound = max<sub>i</sub> n<sub>i</sub>/R<sub>i</sub>
+Lower bound = max<sub>i</sub> ceil(n<sub>i</sub>/R<sub>i</sub>)
 
 
 #### Scheduling constraint: Resource
