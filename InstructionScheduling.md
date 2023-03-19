@@ -60,9 +60,9 @@ Loop until READY is empty{
 Schedules operations in **topological order** and never backtracks. 
 
 Variations for the priority function:
-* **Critical path** max clocks from n to any node
-* Resource requirements
-* Source order
+* Without resource constraints, consider **critical path** (the longest path through the data-dependency graph). Prioity function: **the height** of the node, which is the length of a longest path in the graph originating from the node. 
+* Give higher priority to critical resource if no data dependency
+* Source order to break tie
 
 ### Global scheduling
 
