@@ -17,8 +17,7 @@ The locally compacted code may not be optimal, but we only care that the steady 
 
 With "doAccross" loops there's a limit of how much you can parallelise the code.
 
-#### Resource bound on Initiation Interval
-
+#### Resource constraints on Initiation Interval
 
 > for all resource i
   number of units require by one iteration: n<sub>i</sub>
@@ -26,6 +25,10 @@ With "doAccross" loops there's a limit of how much you can parallelise the code.
   
 > Lower bound = max<sub>i</sub> ceil(n<sub>i</sub>/R<sub>i</sub>)
 
+#### Precedence constraints on Initiation Interval
+
+for all cycles c,
+  max<sub>c</sub> CycleLength(c) / Iteration difference(c)
 
 #### Scheduling constraint: Resource
 
@@ -47,14 +50,7 @@ Label edges with <𝛿, d>
 
 Cycles in the dependence graph mean that now you're bound on both ends. You can't stretch T arbitrarily 
 
-**Algorithm for bound on Initiation Interval based on precedence**
-
-for all cycles c,
-  max<sub>c</sub> CycleLength(c) / Iteration difference(c)
-
-
 ### Algorithm for Acyclic graphs
-
 
 Find lower bound of initiation interval: T<sub>0</sub>
   based on resource constraints
