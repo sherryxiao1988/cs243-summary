@@ -13,11 +13,25 @@ Unlike loop unrolling we always use the same schedule. That way you find an stea
 
 **Execution time for pipelined code** = Steady state size * iterations + remaining operations.
 
+**Initiation interval = size of steady state**
+
+**Latency** = number of clocks for one iteration
+
+**Throughput** == (1/Initiation interval) iteration/clock
+
+### Basic Block Scheduling of the loo body
+
+**Latency** = number of clocks for one iteration
+
+**Throughput** == (1/number of clocks) iteration/clock
+
+Usually with software pipelining you get worse latency but better throughput.
+
+
 The locally compacted code may not be optimal, but we only care that the steady state is tight.
 
 With "doAccross" loops there's a limit of how much you can parallelise the code.
 
-**Initiation interval = size of steady state**
 
 ### Resource constraints on Initiation Interval
 
