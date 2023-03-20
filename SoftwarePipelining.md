@@ -77,6 +77,8 @@ If your loop is such that:
 
 **You can always meet the lower bound.** You just keep stretching the cycle until you pack them all in.
 
+**No backtracking at all**
+
 ### Algorithm for Cyclic graphs
 
 **Strongly connected component:** A set of nodes such that every node can reach every other node. Every node constraints all others from above and below. As each node is scheduled we find the lower and upper bounds of all other nodes in the SCC
