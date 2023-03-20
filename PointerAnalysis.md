@@ -58,17 +58,10 @@ If you know the type of the object you can know exactly with method is being cal
 
 ![Call Graph Improved](/images/callGraphImproved.png)
 
-### Context-Sensitive Pointer analysis
+### Batch-process the Rules
+1.Bundle all the initial vPs
+2.Propagate vPs through ‘assign’ relationship
+3.Construct hPs through ‘store’ relationship by enumerating the vPs on both sides
+4.Expand vPs through ‘load’ relationship
+5.Repeat till convergence
 
-Without context sensitivity more or less is like doing type analysis: _"this are the kinds of types that can be passed in"_
-
-**# of contexts is exponential!** (even without recursion)
-
-![Context explosion](/images/contextExplosion.png)
-
-**How we handle recursion:** 
-1. Figure out which are the recursive cycles 
-2. Expand the graph but treat each recursive unit as an instance. Meaning if you have N different ways of calling the cycle then you'll have 3 different instances.
-3. Note that you'll also have to copy the things that the recursive unit references
-
-![Handling recursion](/images/handlingRecursion.png)
