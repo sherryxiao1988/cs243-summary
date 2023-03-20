@@ -74,7 +74,9 @@ If your loop is such that:
 
 SCC are hard to schedule. When you're working with the critical cycle (cycle lenght / iteration difference = T) you have **no slack**.
 
-Edges between SCC are acyclic. So when backtracking we can move the SCC as a whole moving it's starting point. We can only try T times because on T + 1 we would be repeting so there's no point on keep trying.
+Edges between SCC are acyclic. So when backtracking we can move the SCC as a whole moving it's starting point. We can only try T times because on T + 1 we would be repeating so there's no point on keep trying.
+
+SCC are scheduled in topological order, so sometimes this algo cannot generate the optimal pipeline if interleaving scheduling is needed between SCCs.
 
 This algorithm works for acyclic graphs too:
 
