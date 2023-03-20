@@ -60,13 +60,15 @@ Cycles in the dependence graph mean that now you're bound on both ends. You can'
 Find lower bound of initiation interval: T<sub>0</sub>
   based on resource constraints
 
+```
 For T = T<sub>0</sub>, T<sub>0</sub> + 1, ... until all nodes are scheduled
   For each node n in topological order
     s<sub>0</sub> = earliest n can be scheduled
     for each s = s<sub>0</sub>, s<sub>0</sub> + 1
       if NodeScheduled(n, s) break;
     if n cannot be scheduled break;
-    
+```
+
 NodeScheduled(n, s)
   Check resources of n at s in modulo reservation table
 
