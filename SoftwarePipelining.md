@@ -78,29 +78,9 @@ Edges between SCC are acyclic. So when backtracking we can move the SCC as a who
 
 SCC are scheduled in topological order, so sometimes this algo cannot generate the optimal pipeline if interleaving scheduling is needed between SCCs.
 
-This algorithm works for acyclic graphs too:
+This algorithm works for acyclic graphs too.
 
-Find lower bound of initiation interval: T<sub>0</sub>
-  based on resource constraints and precedence constraits
-
-For T = T<sub>0</sub>, T<sub>0</sub> + 1, ... until all nodes are scheduled
-  E<sup>*</sup> =  longest path between each pair
-  For each SCC c in topological order
-    s<sub>0</sub> = Earliest c can be scheduled
-    For each s = s<sub>0</sub>, s<sub>0</sub> + 1, ... s<sub>0</sub> + T - 1 
-      If SCCScheduled(c, s) break;
-    If c cannot be scheduled return false;
-  Return true;
-  
-SCCScheduled (c, s)
-  Schedule first node at s, return false if fails
-  For each remaining node n in c
-    s<sub>l</sub> = lower bound on n based on E<sup>*</sup>
-    s<sub>u</sub> = upper bound on n based on E<sup>*</sup>
-    For each s = ss<sub>l</sub>, s<sub>l</sub> + 1, ..., min(s<sub>l</sub> + T - 1, s<sub>u</sub>)
-      if NodeScheduled(n, s) break;
-    if n cannot be scheduled return false;
-  Return true;
+![cyclic scheduling algo](images/softwarePipeliningCycle.png)
 
 
 ### Modulo variable expansion
