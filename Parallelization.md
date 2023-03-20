@@ -1,4 +1,4 @@
-##Parallelization
+## Parallelization
 
 This is multiprocess parallelization. Not the instruction level parallelism from before.
 
@@ -34,19 +34,6 @@ Be sure to also check for output dependence! In such cases you add the constrait
 
 ![Dependence Analysis](/images/depAnalysis.png)
 
-:pencil2: //TODO understand the GCD test for data dependence
-
-### Fourier-Motzkin Elimination
-
-Eliminate one variable at a time to see if there's a solution at the end. 
-
-```
-To eliminate x<sub>1</sub>
-  1. Write all inequalities as Lower bounds and Upper bounds of x<sub>1</sub>
-  2. Cross product all Upper and Lower bounds of x<sub>1</sub>
-```
-
-**If one of the variables can only be a real number**. For example you discover that x=0,5. Then you create 2 problems by adding x ≤ 0 and x ≥ 1 and do the test all over again.
 
 ### Relaxing dependencies
 
