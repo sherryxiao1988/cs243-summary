@@ -66,11 +66,13 @@ Variations for the priority function:
 
 ### Global scheduling
 
-* **Control equivalence** Two operations are control equivalent if o<sub>1</sub> is executed if and only if o<sub>2</sub> is executed -- still need to check *data dependency* before moving the operations around.
+* **Control equivalence** Two operations are control equivalent if o<sub>1</sub> is executed if and only if o<sub>2</sub> is executed -- still need to check **data dependency** before moving the operations around.
 * **Control dependence** An o<sub>2</sub> is control dependent on o<sub>1</sub> if the execution of o<sub>2</sub> depends on the outcome of o<sub>1</sub>
 * **Speculation** An operation is speculatively executed if it is executed before **all** the operations it depends on (control-wise) have been executed
 
 #### Code motions
+
+Code motion table (p731 textbook)
 
 Moving instructions **up**:
 * Move instruction to a cutset (from entry). This includes moving it to a Control Equivalent
@@ -79,9 +81,6 @@ Moving instructions **up**:
 Moving instructions **down**:
 * Move instruction to a cut set (from exit)
 * Can duplicate code too provide one path where the op is executed and one where it's not
-
-| :warning: Remember to updated the constraints upon moving an expression |
-|---|
 
 ### A basic scheduling algorithm
 
