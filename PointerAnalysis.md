@@ -59,9 +59,10 @@ If you know the type of the object you can know exactly with method is being cal
 ![Call Graph Improved](/images/callGraphImproved.png)
 
 ### Batch-process the Rules
-1.Bundle all the initial vPs
-2.Propagate vPs through ‘assign’ relationship
-3.Construct hPs through ‘store’ relationship by enumerating the vPs on both sides
-4.Expand vPs through ‘load’ relationship
-5.Repeat till convergence
-
+```
+1. Bundle all the initial vPs
+2. Propagate vPs through ‘assign’ relationship
+3. Construct hPs through ‘store’ relationship by enumerating the vPs on both sides
+4. Expand vPs through ‘load’ relationship
+5. Repeat till convergence
+```
