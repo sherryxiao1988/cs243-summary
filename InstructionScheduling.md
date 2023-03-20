@@ -66,7 +66,7 @@ Variations for the priority function:
 
 ### Global scheduling
 
-* **Control equivalence** Two operations are control equivalent if o<sub>1</sub> is executed if and only if o<sub>2</sub> is executed
+* **Control equivalence** Two operations are control equivalent if o<sub>1</sub> is executed if and only if o<sub>2</sub> is executed -- still need to check *data dependency* before moving the operations around.
 * **Control dependence** An o<sub>2</sub> is control dependent on o<sub>1</sub> if the execution of o<sub>2</sub> depends on the outcome of o<sub>1</sub>
 * **Speculation** An operation is speculatively executed if it is executed before **all** the operations it depends on (control-wise) have been executed
 
