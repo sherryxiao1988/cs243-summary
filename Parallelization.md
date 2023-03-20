@@ -34,6 +34,14 @@ Be sure to also check for output dependence! In such cases you add the constrait
 
 ![Dependence Analysis](/images/depAnalysis.png)
 
+### Parallelizable without Loop Transformation
+**1-d parallelizable**: is it ok to assign each outer loop to one single process? Any data dependency between these processes? (different outer array index can access the same array element?)
+
+**2-d Parallelizable**: is it ok to assign each inner loop to one single process? (with same outer loop array index, but different inter loop array index, can they access the same array element?)
+
+### Loop Transformation
+
+A loop transform is legal if all data dependences in the original loop nest are honored with sequential execution in the new loop.
 
 ### Relaxing dependencies
 
