@@ -51,6 +51,8 @@ Label edges with <𝛿, d>
 Constraint for edge from n<sub>1</sub> to n<sub>2</sub> labeled <𝛿, d>
 > 𝛿 * T + S(n<sub>2</sub>) - S(n<sub>1</sub>)  ≥ d
 
+This also means, **no precedence constraints for doAll** loops.
+
 ![precedence](/images/precedence.png)
 
 Cycles in the dependence graph mean that now you're bound on both ends. You can't stretch T arbitrarily 
