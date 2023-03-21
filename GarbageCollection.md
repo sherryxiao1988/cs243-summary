@@ -60,13 +60,13 @@ Less frequent: **faster overall** but requires more memory.
 
 Performance metric
 
-|                             | Reference counting | Trace Based |
-| --------------------------- | ------------------ | ----------- |
-| Space reclaimed             |                    | :white_check_mark: |
-| Overall execution time      |                    | :white_check_mark: |
-| Space usage                 | :white_check_mark: |             |
-| Pause time                  | :white_check_mark: |             |
-| Program locality            |                    | **opportunity<sup>\*</sup>** |
+|                             | Reference counting | Trace Based | Generational |
+| --------------------------- | ------------------ | ----------- | ------------ |
+| Space reclaimed             | not going to catch things with cycles | :white_check_mark: | :white_check_mark: will clean-up youger objects more frequently|
+| Overall execution time      | every single operation may triggers garbage collection | :white_check_mark: | :white_check_mark::white_check_mark: less time will be spent finding reachable objects |
+| Space usage                 | :white_check_mark::white_check_mark: | :white_check_mark: need to wait for memory already used up | more space overhead to organize objects into generations |
+| Pause time                  | :white_check_mark: |             | :white_check_mark: only doing partial collection |
+| Program locality            | :white_check_mark: reference count are kept next to the object| **opportunity** with copying collector | :white_check_mark: objects are partitioned by age |
 
 <sup>\*</sup> we can repack data because we calculate everything that is reachable
 
