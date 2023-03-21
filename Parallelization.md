@@ -51,13 +51,6 @@ To solve the scalar privatization each processor has to have it's own _t_. So no
 
 Reduction operations are parallelizable to. Think Map-Reduce
 
-### Amdahl's Law
-
-> "Suppose you have 10% of the program that is not parallelisable you can only speed up the program by 90%"
-
-Hence we need to parallelise at the coarsest granularity (outer loops) minimizing communication. Or else if you found that the bulk of the computation is in a small core, you fully optimize that core.
-
-:pencil2: //TODO understand intraprocedural parallelization
 
 ## Loop transformations for Parallelism and Locality
 
@@ -103,10 +96,6 @@ The constant term is used to move the indexes sideways to make them match. This 
 **Optimization:** Removes unnecessary looping and condition evaluation.
 
 ### Advanced topic: Pipelining
-
-SOR = Successive over-relaxation.
-
-![SOR](/images/SOR.png)
 
 Using affine function will tell us send everything to the same processor.
 
